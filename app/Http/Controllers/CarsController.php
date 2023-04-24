@@ -11,7 +11,7 @@ class CarsController extends Controller
     {
         $cars = Car::all();
 
-        return $cars->toArray();
+        return view('cars.index', compact('cars'));
     }
 
     public function create()

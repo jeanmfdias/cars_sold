@@ -2,6 +2,7 @@
 
 @section('content')
     <section>
+        <h1>Create a car</h1>
         <form action="{{ route('cars.store') }}" method="post">
             @csrf
             <div>
@@ -34,5 +35,8 @@
             </div>
             <button type="submit">Save</button>
         </form>
+        <p>
+            <a href="{{ route('cars.index') }}">Back</a>
+        </p>
     </section>
 @endsection
