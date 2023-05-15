@@ -28,4 +28,9 @@ class CarsController extends Controller
 
         return redirect(route('cars.index'));
     }
+
+    public function show(Car $car)
+    {
+        return view('cars.show', compact('car'));
+    }
 }
