@@ -36,7 +36,7 @@
             <button type="submit">Save</button>
         </form>
         <p>
-            <a href="{{ route('cars.index') }}">Back</a>
+            <a href="{{ route('cars.index') }}">Go Back</a>
         </p>
     </section>
 @endsection
