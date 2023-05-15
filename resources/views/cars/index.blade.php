@@ -31,6 +31,11 @@
                             <div>
                                 <a href="{{ route('cars.edit', $car->id) }}">Edit</a>
                                 <a href="{{ route('cars.show', $car->id) }}">Show</a>
+                                <form action="{{ route('cars.destroy', $car->id) }}" method="post">
+                                    @method('delete')
+                                    @csrf
+                                    <button type="submit">Delete</button>
+                                </form>
                             </div>
                         </td>
                     </tr>
