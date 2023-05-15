@@ -24,6 +24,10 @@
             <p>{{ $car->horse_power }}cv</p>
         </div>
         <div>
+            <label for="color">Color:</label>
+            <p>{{ ucfirst($car->color) }}</p>
+        </div>
+        <div>
             <label for="created_at">Created At:</label>
             <p>{{ $car->created_at->format('d/m/Y H:i:s') }}</p>
         </div>
