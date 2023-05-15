@@ -33,4 +33,20 @@ class CarsController extends Controller
     {
         return view('cars.show', compact('car'));
     }
+
+    public function edit(Car $car)
+    {
+        $colors = Car::COLORS;
+
+        return view('cars.edit', compact('car', 'colors'));
+    }
+
+    public function update(Car $car, Request $request)
+    {
+        $data = $request->all();
+
+        $car->update($data);
+
+        return redirect(route('cars.show', $car->id));
+    }
 }
