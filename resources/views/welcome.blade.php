@@ -128,6 +128,11 @@
                                 Sponsor
                             </a>
                         </div>
+                        <div>
+                            <a href="{{ route('cars.index') }}" class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+                                Go to App
+                            </a>
+                        </div>
                     </div>
 
                     <div class="ml-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
