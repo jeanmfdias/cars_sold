@@ -35,6 +35,16 @@
             <label for="updated_at">Updated At:</label>
             <p>{{ $car->updated_at->format('d/m/Y H:i:s') }}</p>
         </div>
+        @if ($car->isSold())
+            <div>
+                <label for="sold_at">Sold At:</label>
+                <p>{{ $car->sold_at->format('d/m/Y H:i:s') }}</p>
+            </div>
+            <div>
+                <label for="sold_price">Sold price:</label>
+                <p>R$ {{ number_format($car->sold_price, 2, '.', ',') }}</p>
+            </div>
+        @endif
         <div>
             <a href="{{ route('cars.index') }}">Go back</a>
         </div>

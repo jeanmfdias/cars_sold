@@ -45,6 +45,10 @@ class CarsController extends Controller
     {
         $data = $request->all();
 
+        if (!$car->sold_at) {
+            $data['sold_at'] = date('Y-m-d H:i:s');
+        }
+
         $car->update($data);
 
         return redirect(route('cars.show', $car->id));

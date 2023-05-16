@@ -37,6 +37,14 @@
                 </select>
             </div>
             <div>
+                <p>It car was sold?</p>
+                <label for="sold_price">Sold price</label>
+                <input type="number" step="0.01" name="sold_price" value="{{ $car->sold_price }}">
+                @if ($car->sold_at)
+                    <p>Car was sold at {{ $car->sold_at->format('d/m/Y H:i:s') }}</p>
+                @endif
+            </div>
+            <div>
                 <button type="submit">Update</button>
             </div>
         </form>

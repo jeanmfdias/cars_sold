@@ -15,6 +15,7 @@
                     <th>Motor</th>
                     <th>Horse Power</th>
                     <th>Color</th>
+                    <th>Sold</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -27,6 +28,7 @@
                         <td>{{ number_format($car->motor, 1) }}</td>
                         <td>{{ $car->horse_power . "cv" }}</td>
                         <td>{{ ucfirst($car->color) }}</td>
+                        <td>{{ $car->isSold() ? 'Yes' : 'No' }}</td>
                         <td>
                             <div>
                                 <a href="{{ route('cars.edit', $car->id) }}">Edit</a>
@@ -42,5 +44,8 @@
                 @endforeach
             </tbody>
         </table>
+        <p>
+            <small>* To mark as sold, go to edit page</small>
+        </p>
     </section>
 @endsection
