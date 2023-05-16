@@ -4,9 +4,9 @@
     <section>
         <h1>Cars</h1>
         <p>
-            <a href="{{ route('cars.create') }}">New</a>
+            <a class="btn btn-primary" href="{{ route('cars.create') }}">New</a>
         </p>
-        <table>
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>Brand</th>
@@ -30,15 +30,15 @@
                         <td>{{ ucfirst($car->color) }}</td>
                         <td>{{ $car->isSold() ? 'Yes' : 'No' }}</td>
                         <td>
-                            <div>
-                                <a href="{{ route('cars.edit', $car->id) }}">Edit</a>
-                                <a href="{{ route('cars.show', $car->id) }}">Show</a>
-                                <form action="{{ route('cars.destroy', $car->id) }}" method="post">
-                                    @method('delete')
-                                    @csrf
-                                    <button type="submit">Delete</button>
-                                </form>
-                            </div>
+                            <form action="{{ route('cars.destroy', $car->id) }}" method="post">
+                                @method('delete')
+                                @csrf
+                                <div class="btn-group">
+                                    <a class="btn btn-warning" href="{{ route('cars.edit', $car->id) }}">Edit</a>
+                                    <a class="btn btn-info" href="{{ route('cars.show', $car->id) }}">Show</a>
+                                    <button class="btn btn-danger" type="submit">Delete</button>
+                                </div>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
